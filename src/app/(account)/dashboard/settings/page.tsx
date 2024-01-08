@@ -1,18 +1,24 @@
-import Link from 'next/link';
+'use client';
+import { useRouter } from 'next/navigation';
 
 export default function SettingsPage() {
+  const router = useRouter();
+
   return (
     <div>
       <p>This is my SettingsPage</p>
-      <Link href="/admin">Go to Admin</Link>
-      <br />
-      <Link href="/dashboard">Go to Dashboard</Link>
-      <br />
-      <Link href="/dashboard/settings">Go to Settings</Link>
-      <br />
-      <Link href="/dashboard/settings/password">Go to Password</Link>
-      <br />
-      <Link href="/dashboard/settings/profile">Go to Profile</Link>
+      <button type="button" onClick={() => router.push('/admin')}>
+        Admin
+      </button>
+      <button type="button" onClick={() => router.push('/dashboard')}>
+        Dashboard
+      </button>
+      <button type="button" onClick={() => router.push('/dashboard/settings/password')}>
+        Password
+      </button>
+      <button type="button" onClick={() => router.push('/dashboard/settings/profile')}>
+        Profile
+      </button>
     </div>
   );
 }

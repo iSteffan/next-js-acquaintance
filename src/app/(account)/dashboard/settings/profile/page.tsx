@@ -1,13 +1,16 @@
-// 'use client';
+'use client';
+import { useRouter } from 'next/navigation';
 
-// import { useState } from 'react';
+export default function ProfilePage() {
+  const router = useRouter();
 
-export default async function ProfilePage() {
-  // const [isAdmin, setIsAdmin] = useState(false);
+  return (
+    <div>
+      <p>This is my ProfilePage</p>
 
-  const data = await fetch('https://jsonplaceholder.typicode.com/todos/1').then(response =>
-    response.json()
+      <button type="button" onClick={() => router.push('/dashboard')}>
+        Dashboard
+      </button>
+    </div>
   );
-
-  return <div>{data.id}</div>;
 }
