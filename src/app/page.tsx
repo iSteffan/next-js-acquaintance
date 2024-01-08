@@ -3,7 +3,10 @@ import styles from './page.module.css';
 
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Home page', description: '' };
+export const metadata: Metadata = {
+  title: 'Home page',
+  description: 'This is my first Next.js acquaintance',
+};
 
 export default function Home() {
   return (
